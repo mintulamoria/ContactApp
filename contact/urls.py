@@ -7,7 +7,7 @@ app_name = 'contact'
 
 
 urlpatterns = [
-    path('', views.contact_list, name='contact_list'),
+    path('', views.contact_new, name='contact_list'),
 #	path('', views.Person, name='Person'),
 
 ]

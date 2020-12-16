@@ -3,57 +3,22 @@
 <head>
     <title>Contact App</title>
 </head>
+
+<body>
+
+<div class="container my-3">
+<h3>Contact Form</h3>
 <form method="POST">
     {% csrf_token %}
     {{ form }}
     <button type="submit">SEND</button>
 </form>
-<body>
-
-<div class="container my-3">
-<h3>Contact Form</h3>
-<form action="person" method="post">
-{% csrf_token %}
-  <div class="form-group">
-    <li><label for="name">First Name</label></li>
-    <input type="text" class="form-control" id="name" name="name"aria-describedby="name">
-  </div>
-
-  <div class="form-group">
-    <li><label for="name">Last Name</label></li>
-    <input type="text" class="form-control" id="name" name="name"aria-describedby="name">
-  </div>
-
-  <div class="form-group">
-    <li><label for="email">Email address</label></li>
-    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-  </div>
-
-  <div class="form-group">
-    <li><label for="mobile">Mobile Number</label></li>
-    <input type="tel" class="form-control" id="mobile" name="mobile">
-  </div>
-
-  <div class="form-group">
-    <li><label for="content">Message :</label></li>
-    <textarea class="form-control" name="person" id="person" cols="30" rows="5"></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 </div>
-
     <div>
         {% for person in persons %}
             <ul>
                 <li><a href="#">{{ person.full_name }}</a></li>
             </ul>
-            <form method="post">
-			    {% csrf_token %}
-			    <div class="form-group">
-			    {{ form.as_p }}
-			    </div>
-			</form>
         {% endfor %}
     </div>
 </body>
